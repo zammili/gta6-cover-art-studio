@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neon Tide Cover Studio — GTA-style cover art from your photo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="masthead">
+  <h1 id="brand">Neon Tide <span>Cover Studio</span></h1>
+  <p id="tagline">Your photo in, poster out: multi-panel cover art with a sunset-neon grade, exported as a PNG. Photos never leave this machine.</p>
+</header>
+
+<main id="studio">
+  <section id="stage" aria-label="Cover preview">
+    <canvas id="preview" width="1080" height="1080"></canvas>
+    <p id="stage-hint">Tip: click a panel in the poster to select it, then frame it with the sliders.</p>
+  </section>
+
+  <aside id="controls">
+    <fieldset id="photo-box">
+      <legend>1 · Photo</legend>
+      <label id="file-label" for="photo-file">Load a photo from this machine</label>
+      <input id="photo-file" type="file" accept="image/*" multiple>
+      <div id="sample-row">
+        <span>Or try a bundled sample:</span>
+        <button id="sample-pier" type="button">Pier at dusk</button>
+        <button id="sample-boulevard" type="button">Boulevard</button>
+      </div>
+      <label id="all-panels-label">
+        <input id="all-panels" type="checkbox">
+        Fill every panel with the same photo
+      </label>
+    </fieldset>
+
+    <fieldset id="panel-box">
+      <legend>2 · Panel &amp; framing</legend>
+      <div id="panel-list" role="listbox" aria-label="Panels"></div>
+      <label class="slider-row" for="zoom">Zoom
+        <input id="zoom" type="range" min="1" max="3.5" step="0.01" value="1.15">
+      </label>
+      <label class="slider-row" for="focal-x">Focus left–right
+        <input id="focal-x" type="range" min="0" max="1" step="0.01" value="0.5">
+      </label>
+      <label class="slider-row" for="focal-y">Focus up–down
+        <input id="focal-y" type="range" min="0" max="1" step="0.01" value="0.45">
+      </label>
+      <button id="clear-panel" type="button">Clear this panel (back to the drawn scene)</button>
+    </fieldset>
+
+    <fieldset id="caption-box">
+      <legend>3 · Caption</legend>
+      <input id="caption" type="text" maxlength="34" value="Neon Tide Run" aria-label="Caption lettering">
+    </fieldset>
+
+    <fieldset id="export-box">
+      <legend>4 · Export</legend>
+      <label for="size">Post size</label>
+      <select id="size">
+        <option value="1080x1080" selected>Square — 1080 × 1080</option>
+        <option value="1080x1350">Portrait — 1080 × 1350</option>
+        <option value="1920x1080">Wide — 1920 × 1080</option>
+      </select>
+      <button id="export" type="button">Export PNG</button>
+      <p id="export-note">Renders at full size on this machine — nothing is uploaded.</p>
+    </fieldset>
+  </aside>
+</main>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

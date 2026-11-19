@@ -1,0 +1,245 @@
+/* Neon Tide Cover Studio — editor styling.
+   A dark plum studio with teal-to-pink neon accents, echoing the grade the
+   poster itself applies. System font stacks only; nothing is fetched. */
+
+:root {
+  --plum-950: #12041f;
+  --plum-900: #1c0733;
+  --plum-800: #2a0e47;
+  --ink: #f6efdd;
+  --ink-dim: #c9b8e8;
+  --teal: #19e3d2;
+  --pink: #ff2e88;
+  --amber: #ffb347;
+  --panel-line: #4a2a72;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(1100px 480px at 85% -10%, rgba(255, 46, 136, 0.20), transparent 60%),
+    radial-gradient(900px 500px at -10% 0%, rgba(25, 227, 210, 0.14), transparent 55%),
+    var(--plum-950);
+  color: var(--ink);
+  font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#masthead {
+  padding: 22px 28px 6px;
+}
+
+#brand {
+  margin: 0;
+  font-family: "Arial Narrow", "Liberation Sans Narrow", Impact, Haettenschweiler, sans-serif;
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-shadow: 3px 3px 0 var(--pink), -2px 2px 0 rgba(25, 227, 210, 0.75);
+}
+
+#brand span { color: var(--amber); }
+
+#tagline {
+  margin: 6px 0 0;
+  max-width: 720px;
+  color: var(--ink-dim);
+  font-size: 15px;
+}
+
+#studio {
+  display: flex;
+  gap: 26px;
+  align-items: flex-start;
+  padding: 18px 28px 30px;
+}
+
+#stage {
+  flex: 1 1 auto;
+  min-width: 300px;
+  text-align: center;
+}
+
+#preview {
+  width: min(100%, 620px);
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55), 0 0 0 1px var(--panel-line);
+  background: #f6efdd;
+  cursor: pointer;
+}
+
+#stage-hint {
+  color: var(--ink-dim);
+  font-size: 13px;
+}
+
+#controls {
+  flex: 0 0 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+#controls fieldset {
+  border: 1px solid var(--panel-line);
+  border-radius: 10px;
+  background: var(--plum-900);
+  padding: 12px 14px 14px;
+  margin: 0;
+}
+
+#controls legend {
+  padding: 0 6px;
+  font-family: "Arial Narrow", "Liberation Sans Narrow", Impact, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+#file-label {
+  display: block;
+  padding: 10px 12px;
+  border: 1.5px dashed var(--teal);
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  color: var(--ink);
+  background: rgba(25, 227, 210, 0.07);
+}
+
+#file-label:hover { background: rgba(25, 227, 210, 0.16); }
+
+#photo-file { position: absolute; width: 1px; height: 1px; opacity: 0; }
+
+#sample-row {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  font-size: 13px;
+  color: var(--ink-dim);
+}
+
+button {
+  font: inherit;
+  color: var(--ink);
+  background: var(--plum-800);
+  border: 1px solid var(--panel-line);
+  border-radius: 7px;
+  padding: 7px 12px;
+  cursor: pointer;
+}
+
+button:hover { border-color: var(--teal); }
+
+#all-panels-label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#panel-list {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.panel-chip {
+  flex: 1;
+  padding: 8px 4px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.panel-chip[aria-selected="true"] {
+  background: linear-gradient(135deg, rgba(25, 227, 210, 0.25), rgba(255, 46, 136, 0.25));
+  border-color: var(--pink);
+  color: #fff;
+}
+
+.slider-row {
+  display: block;
+  margin: 8px 0;
+  font-size: 13.5px;
+  color: var(--ink-dim);
+}
+
+.slider-row input[type="range"] {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  accent-color: var(--pink);
+}
+
+#clear-panel { width: 100%; margin-top: 4px; font-size: 13px; }
+
+#caption {
+  width: 100%;
+  padding: 9px 10px;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+  background: var(--plum-950);
+  border: 1px solid var(--panel-line);
+  border-radius: 7px;
+}
+
+#size {
+  width: 100%;
+  margin: 4px 0 10px;
+  padding: 8px;
+  color: var(--ink);
+  background: var(--plum-950);
+  border: 1px solid var(--panel-line);
+  border-radius: 7px;
+}
+
+#export {
+  width: 100%;
+  padding: 12px;
+  font-family: "Arial Narrow", "Liberation Sans Narrow", Impact, sans-serif;
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #160429;
+  background: linear-gradient(90deg, var(--teal), var(--amber), var(--pink));
+  border: none;
+  border-radius: 8px;
+}
+
+#export:hover { filter: brightness(1.1); }
+
+#export-note { margin: 8px 0 0; font-size: 12.5px; color: var(--ink-dim); }
+
+/* Screenshot mode (?shot=cover): the poster fills the window, chrome gone. */
+body.shot-cover { background: var(--plum-950); }
+body.shot-cover #masthead,
+body.shot-cover #controls,
+body.shot-cover #stage-hint { display: none; }
+body.shot-cover #studio { padding: 0; }
+body.shot-cover #stage { min-width: 0; }
+body.shot-cover #preview {
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: none;
+  cursor: default;
+}
+
+@media (max-width: 860px) {
+  #studio { flex-direction: column; }
+  #controls { flex-basis: auto; width: 100%; }
+}
